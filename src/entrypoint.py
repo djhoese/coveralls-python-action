@@ -165,6 +165,8 @@ def main():
     parallel_finished = args.parallel_finished
     set_log_level(debug)
     log.debug(f"args: {args}")
+    import subprocess
+    subprocess.run(["git", "config", "-l"])
     if parallel_finished:
         post_webhook(repo_token)
     else:
